@@ -1,24 +1,24 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    <!-- Tabs Titles -->
-
-    <!-- Icon -->
-    
+       
       <div class="fadeIn first">
-        <img src="../../assets/img/icon.png" id="icon" alt="NEW SINEF"/>
+        <img src="../../assets/img/icon-sinef.png" id="icon" alt="NEW SINEF"/>
       </div>
-      
-
-    <!-- Login Form -->
-    <form >
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+ 
+    <form [formGroup] = "loginForm" (ngSubmit)="onSubmit()">
+      <input type="text" id="login" class="fadeIn second" formControlName="login" placeholder="Login" [ngClass]="{ 'invalid-border': submitted && f.login.errors }" />
+      <div *ngIf="submitted && f.login.errors" class="invalid-label">
+          <div *ngIf="f.login.errors.required">Login obrigatório</div>
+      </div>
+      <input type="password" id="password" class="fadeIn third" formControlName="password" placeholder="Password" [ngClass]="{ 'invalid-border': submitted && f.password.errors }" />
+      <div *ngIf="submitted && f.password.errors" class="invalid-label">
+          <div *ngIf="f.password.errors.required">Password obrigatório</div>
+      </div>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
-    <!-- Remind Passowrd -->
     <div id="formFooter">
-      <div class="underlineHover"> V1.0.0</div>
+      <div class="underlineHover"> v1.0.0</div>
     </div>
 
   </div>
