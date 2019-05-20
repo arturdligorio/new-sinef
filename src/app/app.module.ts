@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MainRoutingModule } from './main/main-routing.module';
+import { AvisoComponent } from './aviso/aviso.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MainRoutingModule } from './main/main-routing.module';
     LoginComponent,
     HeaderComponent,
     MainComponent,
-    DashboardComponent
+    DashboardComponent,
+    AvisoComponent
   ],
   imports: [
     BrowserModule,
