@@ -11,9 +11,9 @@
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav" >
-      <li class="nav-item active" *ngFor=" let icon of icons">
+      <li class="nav-item " *ngFor=" let icon of icons">
 
-        <a class="nav-link" href={{icon.path}}>
+        <a class="nav-link" href= "main/{{icon.path}}">
           <i class="material-icons">{{icon.icon}}</i>
           <p>{{icon.name}}</p>
         </a>
