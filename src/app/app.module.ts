@@ -18,6 +18,8 @@ import { MaterialDidaticoComponent } from './material-didatico/material-didatico
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarComponent } from './calendar/calendar.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NotasFaltasComponent } from './notas-faltas/notas-faltas.component';
+import { HorarioAulaComponent } from './horario-aula/horario-aula.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     DashboardComponent,
     AvisoComponent,
     MaterialDidaticoComponent,
-    CalendarComponent
+    CalendarComponent,
+    NotasFaltasComponent,
+    HorarioAulaComponent
   ],
   imports: [
     BrowserModule,
