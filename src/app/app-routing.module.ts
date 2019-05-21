@@ -13,7 +13,8 @@ const routesMain: Routes = [
   children: [
     {
       path: '',
-      component: DashboardComponent
+      pathMatch: 'full',
+      redirectTo: 'dashboard'
    },
    {
       path: 'aviso',
