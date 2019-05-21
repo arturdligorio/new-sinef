@@ -20,6 +20,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotasFaltasComponent } from './notas-faltas/notas-faltas.component';
 import { HorarioAulaComponent } from './horario-aula/horario-aula.component';
+import { CalendarioAcademicoComponent } from './calendario-academico/calendario-academico.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HorarioAulaComponent } from './horario-aula/horario-aula.component';
     MaterialDidaticoComponent,
     CalendarComponent,
     NotasFaltasComponent,
-    HorarioAulaComponent
+    HorarioAulaComponent,
+    CalendarioAcademicoComponent
   ],
   imports: [
     BrowserModule,

@@ -7,39 +7,46 @@ import { AvisoComponent } from 'src/app/aviso/aviso.component';
 import { MaterialDidaticoComponent } from './material-didatico/material-didatico.component';
 import { NotasFaltasComponent } from './notas-faltas/notas-faltas.component';
 import { HorarioAulaComponent } from './horario-aula/horario-aula.component';
+import { CalendarioAcademicoComponent } from './calendario-academico/calendario-academico.component';
 
 const routesMain: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login'},
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
-  { path: 'main', component: MainComponent,
-  children: [
-    {
-      path: '',
-      pathMatch: 'full',
-      redirectTo: 'dashboard'
-   },
-   {
-      path: 'aviso',
-      component: AvisoComponent
-   },
-   {
-    path: 'material-didatico',
-    component: MaterialDidaticoComponent
-    },
-    {
-      path: 'dashboard',
-      component: DashboardComponent
+  {
+    path: 'main', component: MainComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'dashboard'
       },
-    {
+      {
+        path: 'aviso',
+        component: AvisoComponent
+      },
+      {
+        path: 'material-didatico',
+        component: MaterialDidaticoComponent
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
         path: 'notas-faltas',
         component: NotasFaltasComponent
-        },
-    {
+      },
+      {
         path: 'horario-aula',
         component: HorarioAulaComponent
-        },
-   { path: '**', component: DashboardComponent }
-   ] },
+      },
+      {
+        path: 'calendario-academico',
+        component: CalendarioAcademicoComponent
+      },
+      { path: '**', component: DashboardComponent }
+    ]
+  },
 
   { path: '**', component: LoginComponent }
 ];
