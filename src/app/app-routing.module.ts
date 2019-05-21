@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { AvisoComponent } from 'src/app/aviso/aviso.component';
+import { MaterialDidaticoComponent } from './material-didatico/material-didatico.component';
 
 const routesMain: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login'},
@@ -18,15 +19,22 @@ const routesMain: Routes = [
       path: 'aviso',
       component: AvisoComponent
    },
-
+   {
+    path: 'material-didatico',
+    component: MaterialDidaticoComponent
+    },
+    {
+      path: 'dashboard',
+      component: DashboardComponent
+      },
    { path: '**', component: DashboardComponent }
    ] },
 
-  { path: '**', redirectTo: 'login' }
+  { path: '**', component: LoginComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routesMain)],
+  imports: [RouterModule.forRoot(routesMain)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

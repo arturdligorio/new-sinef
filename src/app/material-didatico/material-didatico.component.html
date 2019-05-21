@@ -6,9 +6,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let linha of elements">
+      <th scope="row">{{linha.id}}</th>
+      <td>{{linha.arquivo}}</td>
       <td>{{linha.materia}}</td>
-      <td>{{linha.aviso}}</td>
       <td>{{linha.data}}</td>
+      <td class="desloc-left"><i class="material-icons">cloud_download</i></td>
     </tr>
   </tbody>
 </table>
