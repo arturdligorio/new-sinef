@@ -5,3 +5,8 @@
 .desloc-left{
 padding-left: 3%;
 }
+.btn1{
+    background-color: rgba(246, 246, 246, 0);
+    border: none; /* Remove borders */
+    cursor: pointer; /* Mouse pointer on hover */
+}
