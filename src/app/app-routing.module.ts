@@ -5,6 +5,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { AvisoComponent } from 'src/app/aviso/aviso.component';
 import { MaterialDidaticoComponent } from './material-didatico/material-didatico.component';
+import { NotasFaltasComponent } from './notas-faltas/notas-faltas.component';
+import { HorarioAulaComponent } from './horario-aula/horario-aula.component';
 
 const routesMain: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login'},
@@ -28,6 +30,14 @@ const routesMain: Routes = [
       path: 'dashboard',
       component: DashboardComponent
       },
+    {
+        path: 'notas-faltas',
+        component: NotasFaltasComponent
+        },
+    {
+        path: 'horario-aula',
+        component: HorarioAulaComponent
+        },
    { path: '**', component: DashboardComponent }
    ] },
 

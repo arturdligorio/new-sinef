@@ -1,0 +1,19 @@
+<table class="table table-striped " style="margin-top: -25px !important">
+  <thead class="grey lighten-1 black-text">
+    <tr class="table-head-info-2">
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let linha of elements">
+      <td>{{linha.materia}}</td>
+      <td>{{linha.prova1}}/30</td>
+      <td>{{linha.ai}}/10</td>
+      <td>{{linha.rsc}}/10</td>
+      <td>{{linha.atividades}}/20</td>
+      <td>{{linha.prova2}}/30</td>
+      <td>{{linha.exameEspecial}}</td>
+      <td>{{linha.notaTotal}}/100</td>
+    </tr>
+  </tbody>
+</table>
