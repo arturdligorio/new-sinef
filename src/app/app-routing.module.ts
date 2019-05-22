@@ -8,6 +8,7 @@ import { MaterialDidaticoComponent } from './material-didatico/material-didatico
 import { NotasFaltasComponent } from './notas-faltas/notas-faltas.component';
 import { HorarioAulaComponent } from './horario-aula/horario-aula.component';
 import { CalendarioAcademicoComponent } from './calendario-academico/calendario-academico.component';
+import { LancarNotaComponent } from './lancar-nota/lancar-nota.component';
 
 const routesMain: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -43,6 +44,10 @@ const routesMain: Routes = [
       {
         path: 'calendario-academico',
         component: CalendarioAcademicoComponent
+      },
+      {
+        path: 'lancar-notas',
+        component: LancarNotaComponent
       },
       { path: '**', component: DashboardComponent }
     ]

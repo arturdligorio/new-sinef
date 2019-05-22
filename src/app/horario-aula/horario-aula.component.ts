@@ -68,7 +68,7 @@ export class HorarioAulaComponent implements OnInit {
       quarta: '2700',
       quinta: '2700',
       sexta: '1136',
-    },
+    }
 
   ];
 

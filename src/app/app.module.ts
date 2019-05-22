@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FormsModule } from '@angular/forms';
+import { LancarNotaComponent } from './lancar-nota/lancar-nota.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     MaterialDidaticoComponent,
     NotasFaltasComponent,
     HorarioAulaComponent,
-    CalendarioAcademicoComponent
+    CalendarioAcademicoComponent,
+    LancarNotaComponent
   ],
   imports: [
     BrowserModule,
