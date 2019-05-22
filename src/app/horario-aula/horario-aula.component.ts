@@ -9,65 +9,53 @@ export class HorarioAulaComponent implements OnInit {
 
   elementsMateria: any = [
     {
-      sigla: 1136,
-      materia: 'Fisica II',
+      sigla: '12-4DA',
+      materia: 'Ciências da Computação',
       sala: 'A314'
     },
 
     {
-      sigla: 8254,
-      materia: 'Desenvolvimento Web Front-End',
+      sigla: '50-9DA',
+      materia: 'Engenharia da Computação',
       sala: 'A214'
-    },
-
-    {
-      sigla: 1147,
-      materia: 'Processamento Digital de Sinais',
-      sala: 'A403'
-    },
-
-    {
-      sigla: 2700,
-      materia: 'Banco de Dados',
-      sala: 'A203'
-    },
+    }
   ];
 
   elementsHorario: any = [
     {
       horario: '07:40 - 08:30',
-      segunda: '8254',
-      terca: '8254',
-      quarta: '1136',
+      segunda: '12-4DA/50-9DA',
+      terca: '12-4DA/50-9DA',
+      quarta: '12-4DA',
       quinta: ' ',
-      sexta: ' 1147',
+      sexta: ' 50-9DA',
     },
 
     {
       horario: '08:30 - 09:20',
-      segunda: '8254',
-      terca: '8254',
-      quarta: '1136',
+      segunda: '12-4DA/50-9DA',
+      terca: '12-4DA/50-9DA',
+      quarta: '12-4DA',
       quinta: ' ',
-      sexta: '1147',
+      sexta: '50-9DA',
     },
 
     {
       horario: '09:40 - 10:30',
       segunda: ' ',
-      terca: '1147',
-      quarta: '2700',
-      quinta: '2700',
-      sexta: '1136',
+      terca: '50-9DA',
+      quarta: '50-9DA',
+      quinta: '12-4DA',
+      sexta: '12-4DA',
     },
 
     {
       horario: '10:30 - 11:20',
       segunda: ' ',
-      terca: '1147',
-      quarta: '2700',
-      quinta: '2700',
-      sexta: '1136',
+      terca: '50-9DA',
+      quarta: '50-9DA',
+      quinta: '12-4DA',
+      sexta: '12-4DA',
     }
 
   ];

@@ -9,12 +9,7 @@ import { SidebarStruct } from 'src/app/model/sidebar-struct';
 export class SidebarComponent implements OnInit {
 
   icons: SidebarStruct [] = [
-    {
-      path: "dashboard" ,
-      icon: "home",
-      name: "Área do aluno",
-      profile:"aluno"
-    },
+    
     {
       path: "horario-aula" ,
       icon: "access_time",
@@ -28,7 +23,7 @@ export class SidebarComponent implements OnInit {
       profile:"aluno" 
     },
     {
-      path: "notas-faltas" ,
+      path: "lancar-notas" ,
       icon: "assessment",
       name: "Notas e Faltas",
       profile:"aluno"
