@@ -1,0 +1,14 @@
+<table class="table table-striped " style="margin-top: -25px !important">
+  <thead class="grey lighten-1 black-text">
+    <tr class="table-head-info-2">
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let linha of elements">
+      <td>{{linha.materia}}</td>
+      <td>{{linha.aviso}}</td>
+      <td>{{linha.data}}</td>
+    </tr>
+  </tbody>
+</table>

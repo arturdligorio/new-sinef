@@ -1,0 +1,20 @@
+<table class="table table-striped " style="margin-top: -25px !important">
+  <thead class="grey lighten-1 black-text">
+    <tr class="table-head-info-2">
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let linha of elements">
+      <th scope="row">{{linha.id}}</th>
+      <td>{{linha.arquivo}}</td>
+      <td>{{linha.materia}}</td>
+      <td>{{linha.data}}</td>
+      <td class="desloc-left">
+        <button title="Download" type="buttom" class="btn1">
+          <i class="material-icons">cloud_download</i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

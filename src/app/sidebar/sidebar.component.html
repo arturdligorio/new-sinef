@@ -4,16 +4,15 @@
 
   <div class="logo">
     
-    <a href="/" class="simple-text logo-normal">
-      <img src="../assets/img/icon.png" alt="SINEF" height="42" width="42"> 
-      NEW SINEF
+    <a [routerLink]="['/']" class="simple-text logo-normal">
+      <img src="../../assets/img/icon-sinef.png" alt="SINEF" height="42" width="250" title="NEW SINEF"/> 
     </a>
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav" >
-      <li class="nav-item active" *ngFor=" let icon of icons">
+      <li routerLinkActive="active" class="nav-item " *ngFor=" let icon of icons">
 
-        <a class="nav-link" href={{icon.path}}>
+        <a class="nav-link" routerLink="{{icon.path}}">
           <i class="material-icons">{{icon.icon}}</i>
           <p>{{icon.name}}</p>
         </a>
