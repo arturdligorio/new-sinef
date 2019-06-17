@@ -16,43 +16,34 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
   submitted = false;
   loggin: boolean = false;
-  login:string;
+  login: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    public loginService:LoginService
-  ) { }
+    public loginService: LoginService
+  ) {
 
-  ngOnInit() {
     this.loginForm = this.formBuilder.group({
       login: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
-    
-    authLogin:Login = this.loginService.getLoginAuth(this.login)
-    // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+
   }
 
-  
+  ngOnInit() { }
+
+
 
   get f() { return this.loginForm.controls; }
 
-  onSubmit() {;
-    this.submitted = true;
-
-    if (this.loginForm.invalid) {
-      return;
-    }else
-
-    
-
-    console.log(this.returnUrl);
-    this.loggin = true;
-    this.router.navigate(["main"]);
-
+  onSubmit() {
+    console.log(this.loginForm.controls.login.value);
+    console.log(this.loginForm.controls.password.value);
+    this.loginService.login(this.loginForm.controls.login.value, this.loginForm.controls.password.value);
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
-
 }

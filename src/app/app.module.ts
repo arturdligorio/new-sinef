@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { LancarNotaComponent } from './lancar-nota/lancar-nota.component';
 import { LoginService } from 'src/app/service/login.service';
 import { SidebarService } from 'src/app/service/sidebar.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { SidebarService } from 'src/app/service/sidebar.service';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
