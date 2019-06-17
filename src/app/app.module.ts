@@ -20,6 +20,8 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FormsModule } from '@angular/forms';
 import { LancarNotaComponent } from './lancar-nota/lancar-nota.component';
+import { LoginService } from 'src/app/service/login.service';
+import { SidebarService } from 'src/app/service/sidebar.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { LancarNotaComponent } from './lancar-nota/lancar-nota.component';
     })
   ],
   exports: [CalendarioAcademicoComponent],
-  providers: [],
+  providers: [LoginService, SidebarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

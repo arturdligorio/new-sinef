@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AppComponent } from '../app.component';
+import { LoginService } from 'src/app/service/login.service';
+import { Login } from 'src/app/model/login';
 
 @Component({
   selector: 'app-login',
@@ -14,11 +16,13 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
   submitted = false;
   loggin: boolean = false;
+  login:string;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public loginService:LoginService
   ) { }
 
   ngOnInit() {
@@ -26,22 +30,24 @@ export class LoginComponent implements OnInit {
       login: ['', Validators.required],
       password: ['', Validators.required]
     });
-
+    
+    authLogin:Login = this.loginService.getLoginAuth(this.login)
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
+  
+
   get f() { return this.loginForm.controls; }
 
-  onSubmit() {
-
+  onSubmit() {;
     this.submitted = true;
 
     if (this.loginForm.invalid) {
       return;
-    }
+    }else
 
-    AppComponent
+    
 
     console.log(this.returnUrl);
     this.loggin = true;
