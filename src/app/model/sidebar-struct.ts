@@ -3,5 +3,4 @@ export interface SidebarStruct {
     icon: string;
     name: string;
     profile: string;
-
 }
