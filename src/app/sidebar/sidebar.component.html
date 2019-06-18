@@ -10,7 +10,7 @@
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav" >
-      <li routerLinkActive="active" class="nav-item " *ngFor=" let icon of icons">
+      <li routerLinkActive="active" class="nav-item " *ngFor=" let icon of sidebarService.getListSidebar()">
 
         <a class="nav-link" routerLink="{{icon.path}}">
           <i class="material-icons">{{icon.icon}}</i>
