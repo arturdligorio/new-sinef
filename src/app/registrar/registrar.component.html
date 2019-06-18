@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="wrapper fadeInDown" style="height: 100% !important;">
+    <div id="formContent">
+
+      <div class="fadeIn first" style="margin-top: 40px;">
+       <h1><b> REGISTRAR</b></h1>
+      </div>
+
+      <form [formGroup]="registrarForm" (ngSubmit)="onRegistrar()">
+        <input type="text" id="login" class="fadeIn second" formControlName="login" placeholder="Login"
+          [ngClass]="{ 'invalid-border': registred && f.login.errors }" />
+        <div *ngIf="registred && f.login.errors" class="invalid-label">
+          <div *ngIf="f.login.errors.required">Login obrigatório</div>
+        </div>
+        <input type="password" id="password" class="fadeIn third" formControlName="password" placeholder="Password"
+          [ngClass]="{ 'invalid-border': registred && f.password.errors }" />
+        <div *ngIf="registred && f.password.errors" class="invalid-label">
+          <div *ngIf="f.password.errors.required">Password obrigatório</div>
+          <div *ngIf="f.password.errors && !f.password.errors.required">Mínimo de 6 caracteres</div>
+        </div>
+        <input type="text" id="nome" class="fadeIn third" formControlName="nome" placeholder="Nome"
+          [ngClass]="{ 'invalid-border': registred && f.nome.errors }" />
+        <div *ngIf="registred && f.nome.errors" class="invalid-label">
+          <div *ngIf="f.nome.errors.required">Nome obrigatório</div>
+        </div>
+        <input type="text" id="profile" class="fadeIn third" formControlName="profile" placeholder="Profile"
+          [ngClass]="{ 'invalid-border': registred && f.profile.errors }" />
+        <div *ngIf="registred && f.profile.errors" class="invalid-label">
+          <div *ngIf="f.profile.errors.required">Profile obrigatório: admin, aluno, professor</div>
+        </div>
+        <input type="submit" class="fadeIn fourth" value="Registrar">
+      </form>
+    </div>
+  </div>
+</div>

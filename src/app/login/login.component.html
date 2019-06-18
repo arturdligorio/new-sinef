@@ -6,6 +6,9 @@
       </div>
  
     <form [formGroup] = "loginForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="submitted && !loginService.getFalsoLogado()" class="invalid-label">
+            <div>Login ou Senha Errado</div>
+        </div>
       <input type="text" id="login" class="fadeIn second" formControlName="login" placeholder="Login" [ngClass]="{ 'invalid-border': submitted && f.login.errors }" />
       <div *ngIf="submitted && f.login.errors" class="invalid-label">
           <div *ngIf="f.login.errors.required">Login obrigatório</div>
@@ -13,6 +16,7 @@
       <input type="password" id="password" class="fadeIn third" formControlName="password" placeholder="Password" [ngClass]="{ 'invalid-border': submitted && f.password.errors }" />
       <div *ngIf="submitted && f.password.errors" class="invalid-label">
           <div *ngIf="f.password.errors.required">Password obrigatório</div>
+          <div *ngIf="f.password.errors && !f.password.errors.required">Mínimo de 6 caracteres</div>
       </div>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>

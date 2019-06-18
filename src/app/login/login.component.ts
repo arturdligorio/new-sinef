@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
-import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login.service';
-import { Login } from 'src/app/model/login';
 
 @Component({
   selector: 'app-login',
@@ -15,44 +13,30 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   returnUrl: string;
   submitted = false;
-  loggin: boolean = false;
-  login:string;
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
-    public loginService:LoginService
+    public loginService: LoginService
   ) { }
 
-  ngOnInit() {
+  ngOnInit() { 
+
+    if (this.loginService.isLogged()) {
+      console.log('ta logado');
+      this.router.navigate(['/main']);
+    }
+
     this.loginForm = this.formBuilder.group({
       login: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
-    
-    authLogin:Login = this.loginService.getLoginAuth(this.login)
-    // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
-
-  
 
   get f() { return this.loginForm.controls; }
 
-  onSubmit() {;
+  onSubmit() {
     this.submitted = true;
-
-    if (this.loginForm.invalid) {
-      return;
-    }else
-
-    
-
-    console.log(this.returnUrl);
-    this.loggin = true;
-    this.router.navigate(["main"]);
-
+    this.loginService.login(this.loginForm.controls.login.value, this.loginForm.controls.password.value)
   }
-
 }
