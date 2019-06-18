@@ -80,6 +80,12 @@
       "icon": "home",
       "name": "Notas e Faltas",
       "profile": "professor"
+    },
+    {
+      "path": "registra-login",
+      "icon": "person_add",
+      "name": "Registrar",
+      "profile": "admin"
     }
   ],
   "users": [
@@ -89,6 +95,20 @@
       "login": "joao",
       "password": "e10adc3949ba59abbe56e057f20f883e",
       "profile": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Wagner",
+      "login": "wawa",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "profile": "aluno"
+    },
+    {
+      "id": 2,
+      "name": "Vinicius",
+      "login": "vinicius",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "profile": "professor"
     }
   ]
 }

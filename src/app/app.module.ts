@@ -23,6 +23,7 @@ import { LancarNotaComponent } from './lancar-nota/lancar-nota.component';
 import { LoginService } from 'src/app/service/login.service';
 import { SidebarService } from 'src/app/service/sidebar.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     NotasFaltasComponent,
     HorarioAulaComponent,
     CalendarioAcademicoComponent,
-    LancarNotaComponent
+    LancarNotaComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,

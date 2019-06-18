@@ -10,6 +10,7 @@ import { HorarioAulaComponent } from './horario-aula/horario-aula.component';
 import { CalendarioAcademicoComponent } from './calendario-academico/calendario-academico.component';
 import { LancarNotaComponent } from './lancar-nota/lancar-nota.component';
 import { AuthGuard } from './guard/app.auth';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 const routesMain: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -49,6 +50,10 @@ const routesMain: Routes = [
       {
         path: 'lancar-notas',
         component: LancarNotaComponent
+      },
+      {
+        path: 'registra-login',
+        component: RegistrarComponent
       },
       { path: '**', component: DashboardComponent }
     ]

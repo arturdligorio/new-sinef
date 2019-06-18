@@ -22,7 +22,7 @@ export class SidebarService {
     return this.listSideBar;
   }
 
-  getAllSidebar(profile = 'aluno'){
+  getAllSidebar(profile:string){
     this.getSidebars(profile).subscribe(
       data=>{
         if(data){

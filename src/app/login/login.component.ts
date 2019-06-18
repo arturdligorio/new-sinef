@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
-import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login.service';
-import { Login } from 'src/app/model/login';
 
 @Component({
   selector: 'app-login',
@@ -18,15 +16,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
     public loginService: LoginService
-  ) {
-      if (this.loginService.isLogged) {
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-        this.router.navigate([this.returnUrl]);
-      }
-  }
+  ) { }
 
   ngOnInit() { 
 
