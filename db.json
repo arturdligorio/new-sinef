@@ -25,6 +25,8 @@
         "data":"29/04/2019" 
       }
     ],
+    
+    "courses": [], 
     "sidebar":[
       {
         "path": "dashboard" ,

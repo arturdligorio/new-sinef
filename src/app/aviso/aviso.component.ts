@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Aviso } from '../model/avisos';
+import { AvisoService } from '../service/aviso.service';
 
 @Component({
   selector: 'app-aviso',
@@ -7,31 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvisoComponent implements OnInit {
 
-  elements: any = [
-    {
-      id: 1, materia: 'Desenvolvimento Web Front-End',
-      aviso: 'Favor preencher a pesquisa sobre a disciplina. Pesquisa Anônima',
-      data: '05/04/2019'},
-    {
-      id: 2, materia: 'Desenvolvimento Web Front-End',
-      aviso: 'Data de avaliação para o dia 21/05/2019',
-      data: '10/04/2019'},
-    {
-      id: 3, materia: 'Desenvolvimento Web Front-End',
-      aviso: 'Prezados Alunos, inserir o tema e os integrantes do grupo. Não pode conter temas repetidos.',
-      data: '22/04/2019'},
-    {
-      id: 4, materia: 'Desenvolvimento Web Front-End',
-      aviso: 'Desenvolvimento Web Front-End',
-      data: '29/04/2019'}
-  ];
-
   headElements: any = ['Matéria', 'Aviso', 'Data'];
 
-
-  constructor() { }
+  constructor(
+    public avisoService: AvisoService
+  ) { }
 
   ngOnInit() {
+    this.avisoService.getAllAvisos();
   }
+
 
 }

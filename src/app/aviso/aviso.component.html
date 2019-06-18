@@ -5,10 +5,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let linha of elements">
-      <td>{{linha.materia}}</td>
-      <td>{{linha.aviso}}</td>
-      <td>{{linha.data}}</td>
+    <tr *ngFor="let aviso of avisoService.getListAvisos()">
+      <td>{{aviso.materia}}</td>
+      <td>{{aviso.aviso}}</td>
+      <td>{{aviso.data}}</td>
     </tr>
   </tbody>
 </table>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarStruct } from 'src/app/model/sidebar-struct';
+import { SidebarService } from '../service/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,49 +8,11 @@ import { SidebarStruct } from 'src/app/model/sidebar-struct';
 })
 export class SidebarComponent implements OnInit {
 
-  icons: SidebarStruct [] = [
-    {
-      path: "dashboard" ,
-      icon: "home",
-      name: "Área do aluno",
-      profile:"aluno"
-    },
-    {
-      path: "horario-aula" ,
-      icon: "access_time",
-      name: "Horário de Aula",
-      profile:"aluno" 
-    },
-    {
-      path: "material-didatico" ,
-      icon: "book",
-      name: "Material Didático",
-      profile:"aluno" 
-    },
-    {
-      path: "notas-faltas" ,
-      icon: "assessment",
-      name: "Notas e Faltas",
-      profile:"aluno"
-    },
-    {
-      path: "calendario-academico" ,
-      icon: "calendar_today",
-      name: "Calendário Acadêmico",
-      profile:"aluno"
-    },
-    {
-      path: "aviso" ,
-      icon: "list",
-      name: "Avisos",
-      profile:"aluno"
-    }
 
-  ]
-
-  constructor() { }
+  constructor(public sidebarService:SidebarService) { }
 
   ngOnInit() {
+    this.sidebarService.getAllSidebar();
   }
 
 }
