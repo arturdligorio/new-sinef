@@ -1,61 +1,89 @@
 {
-  "courses": [],
-  "sidebar": [
-    {
-      "path": "dashboard",
-      "icon": "home",
-      "name": "Área do aluno",
-      "profile": "aluno"
-    },
-    {
-      "path": "horario-aula",
-      "icon": "access_time",
-      "name": "Horário de Aula",
-      "profile": "aluno"
-    },
-    {
-      "path": "material-didatico",
-      "icon": "book",
-      "name": "Material Didático",
-      "profile": "aluno"
-    },
-    {
-      "path": "notas-faltas",
-      "icon": "assessment",
-      "name": "Notas e Faltas",
-      "profile": "aluno"
-    },
-    {
-      "path": "calendario-academico",
-      "icon": "calendar_today",
-      "name": "Calendário Acadêmico",
-      "profile": "aluno"
-    },
-    {
-      "path": "dashboard",
-      "icon": "home",
-      "name": "Área do professor",
-      "profile": "professor"
-    },
-    {
-      "path": "horario-professor",
-      "icon": "access_time",
-      "name": "Horário de Aula",
-      "profile": "professor"
-    },
-    {
-      "path": "notas-faltas",
-      "icon": "home",
-      "name": "Notas e Faltas",
-      "profile": "professor"
-    },
-    {
-      "path": "notas-faltas",
-      "icon": "home",
-      "name": "Notas e Faltas",
-      "profile": "professor"
-    }
-  ],
+    "aviso":[
+      {
+        "id":1 ,
+        "materia":"Desenvolvimento Web Front-End",
+        "aviso" : "Favor preencher a pesquisa sobre a disciplina. Pesquisa Anônima",
+        "data": "05/04/2019"
+      },
+      {
+        "id":2 ,
+        "materia":"Desenvolvimento Web Front-End",
+        "aviso" : "Data de avaliação para o dia 21/05/2019",
+        "data":"10/04/2019" 
+      },
+      {
+        "id":3 ,
+        "materia":"Desenvolvimento Web Front-End",
+        "aviso" :"Prezados Alunos, inserir o tema e os integrantes do grupo. Não pode conter temas repetidos." ,
+        "data":"22/04/2019" 
+      },
+      {
+        "id":4,
+        "materia":"Desenvolvimento Web Front-End" ,
+        "aviso":"Desenvolvimento Web Front-End" ,
+        "data":"29/04/2019" 
+      }
+    ],
+    
+    "courses": [], 
+    "sidebar":[
+      {
+        "path": "dashboard" ,
+        "icon": "home",
+        "name": "Área do aluno",
+        "profile":"aluno" 
+    
+      },
+      {
+        "path": "horario-aula" ,
+        "icon": "access_time",
+        "name": "Horário de Aula",
+        "profile":"aluno" 
+      },
+      {
+        "path": "material-didatico" ,
+        "icon": "book",
+        "name": "Material Didático",
+        "profile":"aluno" 
+      },
+      {
+        "path": "notas-faltas" ,
+        "icon": "assessment",
+        "name": "Notas e Faltas",
+        "profile":"aluno"
+      },
+      {
+        "path": "calendario-academico" ,
+        "icon": "calendar_today",
+        "name": "Calendário Acadêmico",
+        "profile":"aluno"
+      },
+      {
+        "path": "dashboard" ,
+        "icon": "home",
+        "name": "Área do professor",
+        "profile":"professor"
+      },
+      {
+        "path": "horario-professor" ,
+        "icon": "access_time",
+        "name": "Horário de Aula",
+        "profile":"professor"
+      },
+      {
+        "path": "notas-faltas" ,
+        "icon": "home",
+        "name": "Notas e Faltas",
+        "profile":"professor"
+      },
+      {
+        "path": "notas-faltas" ,
+        "icon": "home",
+        "name": "Notas e Faltas",
+        "profile":"professor"
+      }
+    ]
   "users": [
     {
       "id": 1,
@@ -65,4 +93,5 @@
       "profile": "admin"
     }
   ]
-}
+  ],
+    }
