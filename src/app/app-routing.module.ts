@@ -9,12 +9,13 @@ import { NotasFaltasComponent } from './notas-faltas/notas-faltas.component';
 import { HorarioAulaComponent } from './horario-aula/horario-aula.component';
 import { CalendarioAcademicoComponent } from './calendario-academico/calendario-academico.component';
 import { LancarNotaComponent } from './lancar-nota/lancar-nota.component';
+import { AuthGuard } from './guard/app.auth';
 
 const routesMain: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
   {
-    path: 'main', component: MainComponent,
+    path: 'main', component: MainComponent, canActivate: [AuthGuard],
     children: [
       {
         path: '',

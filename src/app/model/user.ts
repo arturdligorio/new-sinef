@@ -3,5 +3,5 @@ export interface User{
     name:string;
     login:string;
     password:string;
-    type:string;
+    profile:string;
 }

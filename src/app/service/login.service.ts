@@ -5,20 +5,19 @@ import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/model/user';
 import { Md5 } from 'ts-md5/dist/md5';
+import { CATCH_ERROR_VAR } from '@angular/compiler/src/output/output_ast';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private currentUser: User
+  private currentUser: User = null;
+  private falsoLogado: boolean = true;
 
-  constructor(private http: HttpClient) {
-    this.currentUser = JSON.parse(localStorage.getItem('u'))
-
-    if (this.currentUser == null) {
-      this.guestUser()
-    }
+  constructor(private http: HttpClient, private router: Router) {
+    this.currentUser = JSON.parse(sessionStorage.getItem('u'));
   }
 
   registrarPost(user: User): Observable<User> {
@@ -30,32 +29,30 @@ export class LoginService {
     this.registrarPost(user).subscribe(
       data => {
         this.currentUser = data;
-        localStorage.setItem('u', JSON.stringify(this.currentUser));
+        sessionStorage.setItem('u', JSON.stringify(this.currentUser));
       }
-    )
-  }
-
-  guestUser() {
-    this.currentUser = {
-      "id": 0,
-      "name": "Usuário Convidado",
-      "login": "",
-      "password": "",
-      "type": ""
-    }
+    );
   }
 
   logout() {
-    localStorage.removeItem('u');
-    this.guestUser();
+    sessionStorage.removeItem('u');
+    this.router.navigate(['/login']);
   }
 
   getCurrentUser(): User {
     return this.currentUser;
   }
 
+  getUsuarioAtivo() {
+    if (sessionStorage.getItem('u') !== null) {
+      return sessionStorage.getItem('u');
+    } else {
+      return null;
+    }
+  }
+
   isLogged() {
-    if (localStorage.getItem('u') != null) {
+    if (sessionStorage.getItem('u') != null) {
       return true;
     } else {
       return false;
@@ -63,8 +60,8 @@ export class LoginService {
   }
 
   isAdmin() {
-    if (localStorage.getItem('u') != null) {
-      if (this.currentUser.type === 'admin') {
+    if (sessionStorage.getItem('u') != null) {
+      if (this.currentUser.profile === 'admin') {
         return true;
       } else {
         return false;
@@ -74,27 +71,36 @@ export class LoginService {
     }
   }
 
-  private getUserByLogin(login: String): Observable<User> {
-    return this.http.get<User>(`${API_NEW_SINEF}/users?login=${login}`)
+  private getUserByLogin(login: string): Observable<User> {
+    return this.http.get<User>(`${API_NEW_SINEF}/users?login=${login}`);
   }
 
-  login(login: String, password: string) {
-    console.log('passou aqui 1');
+  getFalsoLogado() {
+    return this.falsoLogado;
+
+  }
+
+  login(login: string, password: string) {
     this.getUserByLogin(login).subscribe(
       data => {
-        //Verificar se veio conteúdo
-        if (data) {
-          console.log('passou aqui');
-          //Verificar se a senha é igual
+
+        try {
           password = Md5.hashStr(password).toString();
 
           if (data[0].password === password) {
             this.currentUser = data[0];
             sessionStorage.setItem('u', JSON.stringify(this.currentUser));
+            this.falsoLogado = true;
+            this.router.navigate(['/main']);
+          }else{
+            this.falsoLogado = false;
           }
-        } 
+        } catch{
+          this.falsoLogado = false;
+          console.log('login não existe');
+        }
       }
-    )
+    );
   }
 }
 
