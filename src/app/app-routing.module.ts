@@ -11,6 +11,9 @@ import { CalendarioAcademicoComponent } from './calendario-academico/calendario-
 import { LancarNotaComponent } from './lancar-nota/lancar-nota.component';
 import { AuthGuard } from './guard/app.auth';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { DashboardProfessorComponent } from './dashboard-professor/dashboard-professor.component';
+import { HorarioProfessorComponent } from './horario-professor/horario-professor.component';
+import { NotasProfessorComponent } from './notas-professor/notas-professor.component';
 
 const routesMain: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -44,6 +47,10 @@ const routesMain: Routes = [
         component: HorarioAulaComponent
       },
       {
+        path: 'horario-professor',
+        component: HorarioProfessorComponent
+      },
+      {
         path: 'calendario-academico',
         component: CalendarioAcademicoComponent
       },
@@ -54,6 +61,14 @@ const routesMain: Routes = [
       {
         path: 'registra-login',
         component: RegistrarComponent
+      },
+      {
+        path: 'dashboard-professor',
+        component: DashboardProfessorComponent
+      },
+      {
+        path: 'lancar-nota',
+        component: LancarNotaComponent
       },
       { path: '**', component: DashboardComponent }
     ]

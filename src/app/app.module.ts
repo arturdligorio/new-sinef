@@ -24,6 +24,9 @@ import { LoginService } from 'src/app/service/login.service';
 import { SidebarService } from 'src/app/service/sidebar.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { DashboardProfessorComponent } from './dashboard-professor/dashboard-professor.component';
+import { HorarioProfessorComponent } from './horario-professor/horario-professor.component';
+import { NotasProfessorComponent } from './notas-professor/notas-professor.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { RegistrarComponent } from './registrar/registrar.component';
     HorarioAulaComponent,
     CalendarioAcademicoComponent,
     LancarNotaComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    DashboardProfessorComponent,
+    HorarioProfessorComponent,
+    NotasProfessorComponent
   ],
   imports: [
     BrowserModule,

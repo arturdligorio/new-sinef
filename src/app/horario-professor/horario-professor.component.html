@@ -1,0 +1,32 @@
+<table class="table table-striped " style="margin-top: -25px !important">
+    <thead class="grey lighten-1 black-text">
+      <tr class="table-head-info-2">
+        <th *ngFor="let head of headElementsMateria" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let materia of elementsMateria">
+        <td>{{materia.sigla}}</td>
+        <td>{{materia.materia}}</td>
+        <td>{{materia.sala}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped " style="margin-top: -25px !important">
+    <thead class="grey lighten-1 black-text">
+      <tr class="table-head-info-2">
+        <th *ngFor="let head of headElementsHorario" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let horario of elementsHorario">
+        <td>{{horario.horario}}</td>
+        <td>{{horario.segunda}}</td>
+        <td>{{horario.terca}}</td>
+        <td>{{horario.quarta}}</td>
+        <td>{{horario.quinta}}</td>
+        <td>{{horario.sexta}}</td>
+      </tr>
+    </tbody>
+  </table>
+  

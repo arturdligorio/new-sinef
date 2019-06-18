@@ -52,13 +52,19 @@
       "profile": "aluno"
     },
     {
+      "path": "aviso",
+      "icon": "announcement",
+      "name": "Avisos",
+      "profile": "aluno"
+    },
+    {
       "path": "calendario-academico",
       "icon": "calendar_today",
       "name": "Calendário Acadêmico",
       "profile": "aluno"
     },
     {
-      "path": "dashboard",
+      "path": "dashboard-professor",
       "icon": "home",
       "name": "Área do professor",
       "profile": "professor"
@@ -70,15 +76,9 @@
       "profile": "professor"
     },
     {
-      "path": "notas-faltas",
+      "path": "lancar-nota",
       "icon": "home",
-      "name": "Notas e Faltas",
-      "profile": "professor"
-    },
-    {
-      "path": "notas-faltas",
-      "icon": "home",
-      "name": "Notas e Faltas",
+      "name": "Lancamento de Notas",
       "profile": "professor"
     },
     {
@@ -109,6 +109,32 @@
       "login": "vinicius",
       "password": "e10adc3949ba59abbe56e057f20f883e",
       "profile": "professor"
+    }
+  ],
+  "materia": [
+    {
+      "id":1,
+      "sigla": "1136",
+      "materia": "Fisica II",
+      "sala": "A314"
+    },
+    {
+      "id":2,
+      "sigla": "8254",
+      "materia": "Desenvolvimento Web Front-End",
+      "sala": "A214"
+    },
+    {
+      "id":3,
+      "sigla": "1147",
+      "materia": "Processamento Digital de Sinais",
+      "sala": "A403"
+    },
+    {
+      "id":4,
+      "sigla": "2700",
+      "materia": "Banco de Dados",
+      "sala": "A203"
     }
   ]
 }

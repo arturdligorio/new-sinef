@@ -1,0 +1,34 @@
+<table class="table table-striped " style="margin-top: -25px !important">
+    <thead class="grey lighten-1 black-text">
+      <tr class="table-head-info-2">
+        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let header of elementsHeader">
+        <td>{{header.materia}}</td>
+        <td>{{header.turma}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <table class="table table-striped " style="margin-top: -25px !important">
+    <thead class="grey lighten-1 black-text">
+      <tr class="table-head-info-2">
+        <th *ngFor="let head of headElementsNota" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let linha of nomes">
+          <td>{{linha.nome}}</td>
+        <td class="desloc-left2"><input type="number" class="form-control whith-notas"></td>
+        <td class="desloc-left2"><input type="number" class="form-control whith-notas" max="20"></td>
+        <td class="desloc-left2"><input type="number" class="form-control whith-notas" max="30"></td>
+        <td class="desloc-left2"><input type="number" class="form-control whith-notas" max="10"></td>
+        <td class="desloc-left2"><input type="number" class="form-control whith-notas" max="10"></td>
+        <td class="desloc-left2"><input type="number" class="form-control whith-notas" max="20"></td>
+        <td class="desloc-left2"><input type="number" class="form-control whith-notas" max="30"></td>
+        <td class="desloc-left2"><input type="number" class="form-control whith-notas" max="100"></td>
+      </tr>
+    </tbody>
+  </table>
