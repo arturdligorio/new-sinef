@@ -33,9 +33,8 @@ export class RegistrarComponent implements OnInit {
   onRegistrar() {
     this.registred = true;
 
-    this.loginService.preparaInserção(this.registrarForm.controls.login.value, 
-      this.registrarForm.controls.password.value, this.registrarForm.controls.nome.value, 
+    this.loginService.preparaInserção(this.registrarForm.controls.login.value,
+      this.registrarForm.controls.password.value, this.registrarForm.controls.nome.value,
       this.registrarForm.controls.profile.value);
-    console.log('veio aqui');
-  } 
+  }
 }

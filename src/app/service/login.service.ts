@@ -14,7 +14,6 @@ export class LoginService {
   private currentUser: User = null;
   private currentProfileUser: string = null;
   private falsoLogado: boolean = true;
-  private userInsercao: User;
 
   constructor(private http: HttpClient, private router: Router) {
     this.currentUser = JSON.parse(sessionStorage.getItem('u'));
@@ -25,23 +24,25 @@ export class LoginService {
     return this.http.post<User>(`${API_NEW_SINEF}/users`, user);
   }
 
-  registrar(user: User ) {
+  registrar(user: User) {
     this.registrarPost(user).subscribe(
       data => {
-        this.currentUser = data;
-        sessionStorage.setItem('u', JSON.stringify(this.currentUser));
+        this.router.navigate(['/login']);
       }
     );
   }
 
-  preparaInserção(login: string, password: string, nome: string, profile:string){
+  preparaInserção(login: string, password: string, nome: string, profile: string) {
 
-    this.userInsercao.login = login;
-    this.userInsercao.password = password;
-    this.userInsercao.name = nome;
-    this.userInsercao.profile = profile;
 
-    this.registrar(this.userInsercao);
+    const userInsercao = new User();
+
+    userInsercao.login = login;
+    userInsercao.password = password;
+    userInsercao.name = nome;
+    userInsercao.profile = profile;
+
+    this.registrar(userInsercao);
 
   }
 
@@ -111,7 +112,13 @@ export class LoginService {
             this.currentUser = data[0];
             sessionStorage.setItem('u', JSON.stringify(this.currentUser));
             this.falsoLogado = true;
-            this.router.navigate(['/main']);
+            if (this.currentUser.profile === 'professor') {
+              this.router.navigate(['/main/dashboard-professor']);
+            } else if (this.currentUser.profile === 'admin') {
+              this.router.navigate(['/main/registra-login']);
+            } else{
+              this.router.navigate(['/main']);
+            }
           } else {
             this.falsoLogado = false;
           }

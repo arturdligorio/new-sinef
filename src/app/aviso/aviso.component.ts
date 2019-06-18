@@ -16,7 +16,7 @@ export class AvisoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.avisoService.getAllAvisos();
+    this.avisoService.getAllAvisosOrderByData();
   }
 
 

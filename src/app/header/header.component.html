@@ -10,7 +10,7 @@
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link" (click)="loginService.logout()" id="navbarDropdownProfile"  title="Log Out">
-            <i class="material-icons" style="cursor: pointer;">person</i>
+            {{loginService.getCurrentUser().name}}<i class="material-icons" style="cursor: pointer;">person</i>
           </a>
         </li>
       </ul>

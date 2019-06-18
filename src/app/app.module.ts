@@ -27,6 +27,8 @@ import { RegistrarComponent } from './registrar/registrar.component';
 import { DashboardProfessorComponent } from './dashboard-professor/dashboard-professor.component';
 import { HorarioProfessorComponent } from './horario-professor/horario-professor.component';
 import { NotasProfessorComponent } from './notas-professor/notas-professor.component';
+import { AvisoService } from './service/aviso.service';
+import { MateriaService } from './service/materia.service';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,7 @@ import { NotasProfessorComponent } from './notas-professor/notas-professor.compo
     })
   ],
   exports: [CalendarioAcademicoComponent],
-  providers: [LoginService, SidebarService],
+  providers: [LoginService, SidebarService, AvisoService, MateriaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

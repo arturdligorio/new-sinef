@@ -2,27 +2,51 @@
   "aviso": [
     {
       "id": 1,
-      "materia": "Desenvolvimento Web Front-End",
+      "materia": "Métodologias e Técnicas de Pesquisa",
       "aviso": "Favor preencher a pesquisa sobre a disciplina. Pesquisa Anônima",
-      "data": "05/04/2019"
+      "data": "05/05/2019"
     },
     {
       "id": 2,
       "materia": "Desenvolvimento Web Front-End",
       "aviso": "Data de avaliação para o dia 21/05/2019",
-      "data": "10/04/2019"
+      "data": "20/05/2019"
     },
     {
       "id": 3,
-      "materia": "Desenvolvimento Web Front-End",
+      "materia": "Métodologias e Técnicas de Pesquisa",
       "aviso": "Prezados Alunos, inserir o tema e os integrantes do grupo. Não pode conter temas repetidos.",
-      "data": "22/04/2019"
+      "data": "17/04/2019"
     },
     {
       "id": 4,
       "materia": "Desenvolvimento Web Front-End",
       "aviso": "Desenvolvimento Web Front-End",
-      "data": "29/04/2019"
+      "data": "18/04/2019"
+    },
+    {
+      "id": 5,
+      "materia": "Banco de dados",
+      "aviso": "Favor preencher a pesquisa a respeito da matéria.",
+      "data": "05/04/2019"
+    },
+    {
+      "id": 6,
+      "materia": "Métodologias e Técnicas de Pesquisa",
+      "aviso": "Data de avaliação para o dia 21/05/2019",
+      "data": "10/04/2019"
+    },
+    {
+      "id": 7,
+      "materia": "Desenvolvimento Web Front-End",
+      "aviso": "Prezados Alunos, inserir o tema e os integrantes do grupo. Não pode conter temas repetidos.",
+      "data": "22/04/2019"
+    },
+    {
+      "id": 8,
+      "materia": "Interface Homem Máquina",
+      "aviso": "Entrega de Trabalho",
+      "data": "21/04/2019"
     }
   ],
   "courses": [],
@@ -98,43 +122,141 @@
     },
     {
       "id": 2,
-      "name": "Wagner",
+      "name": "Wagner Miranda",
       "login": "wawa",
       "password": "e10adc3949ba59abbe56e057f20f883e",
       "profile": "aluno"
     },
     {
-      "id": 2,
-      "name": "Vinicius",
+      "id": 3,
+      "name": "Douglas Campos",
+      "login": "douglas",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "profile": "aluno"
+    },
+    {
+      "id": 4,
+      "name": "Vinicius Tolentino",
       "login": "vinicius",
       "password": "e10adc3949ba59abbe56e057f20f883e",
       "profile": "professor"
+    },
+    {
+      "id": 5,
+      "name": "Christiana",
+      "login": "cris",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "profile": "professor"
+    },
+    {
+      "login": "gabriel",
+      "password": "4badaee57fed5610012a296273158f5f",
+      "name": "Gabriel Morais",
+      "profile": "aluno",
+      "id": 6
+    },
+    {
+      "login": "eloy",
+      "password": "4badaee57fed5610012a296273158f5f",
+      "name": "João Eloy",
+      "profile": "aluno",
+      "id": 7
     }
   ],
   "materia": [
     {
-      "id":1,
-      "sigla": "1136",
-      "materia": "Fisica II",
-      "sala": "A314"
-    },
-    {
-      "id":2,
+      "id": 1,
       "sigla": "8254",
       "materia": "Desenvolvimento Web Front-End",
-      "sala": "A214"
+      "sala": "A214",
+      "professor": "vinicius"
     },
     {
-      "id":3,
+      "id": 2,
       "sigla": "1147",
       "materia": "Processamento Digital de Sinais",
-      "sala": "A403"
+      "sala": "A405",
+      "professor": "vinicius"
     },
     {
-      "id":4,
+      "id": 2,
+      "sigla": "2600",
+      "materia": "Banco de Dados 2",
+      "sala": "A403",
+      "professor": "cris"
+    },
+    {
+      "id": 3,
       "sigla": "2700",
       "materia": "Banco de Dados",
-      "sala": "A203"
+      "sala": "A203",
+      "professor": "cris"
+    }
+  ],
+  "notatotal": [
+    {
+      "id": 1,
+      "user": "wawa",
+      "materia": "Banco de Dados",
+      "valor": "85",
+      "faltas": "4",
+      "color": "info"
+    },
+    {
+      "id": 2,
+      "user": "wawa",
+      "materia": "Fisica II",
+      "valor": "81",
+      "faltas": "2",
+      "color": "warning"
+    },
+    {
+      "id": 3,
+      "user": "wawa",
+      "materia": "Desenvolvimento Web Front-End",
+      "valor": "84",
+      "faltas": "4",
+      "color": "success"
+    },
+    {
+      "id": 4,
+      "user": "wawa",
+      "materia": "Processamento Digital de Sinais",
+      "valor": "80",
+      "faltas": "6",
+      "color": "danger"
+    },
+    {
+      "id": 5,
+      "user": "douglas",
+      "materia": "Banco de Dados",
+      "valor": "82",
+      "faltas": "7",
+      "color": "info"
+    },
+    {
+      "id": 6,
+      "user": "douglas",
+      "materia": "Fisica II",
+      "valor": "71",
+      "faltas": "4",
+      "color": "warning"
+    },
+    {
+      "id": 7,
+      "user": "douglas",
+      "materia": "Desenvolvimento Web Front-End",
+      "valor": "64",
+      "faltas": "9",
+      "color": "success"
+    },
+    {
+      "id": 8,
+      "user": "douglas",
+      "materia": "Processamento Digital de Sinais",
+      "valor": "90",
+      "faltas": "9",
+      "color": "danger"
     }
   ]
 }

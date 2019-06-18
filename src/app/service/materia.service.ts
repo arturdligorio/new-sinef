@@ -13,24 +13,35 @@ export class MateriaService {
 
   listMateria: Materia[] = [];
 
-  private getMaterias(): Observable<Materia[]>{
+  private getMaterias(): Observable<Materia[]> {
     return this.http.get<Materia[]>(`${API_NEW_SINEF}/materia`);
   }
 
-  getAllMaterias(){
+  private getMateriasByProfessor(login: string): Observable<Materia[]> {
+    return this.http.get<Materia[]>(`${API_NEW_SINEF}/materia?professor=${login}`);
+  }
+
+  getAllMaterias() {
 
     this.getMaterias().subscribe(
-      data =>{
+      data => {
 
         this.listMateria = data;
 
       }
     );
-
-
   }
 
-  getListMatrias(){
+  getListMateriasByProfessor(login: string) {
+
+    this.getMateriasByProfessor(login).subscribe(
+      data => {
+        this.listMateria = data;
+      }
+    );
+  }
+
+  getListMaterias() {
 
     return this.listMateria;
 

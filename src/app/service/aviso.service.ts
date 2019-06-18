@@ -19,8 +19,22 @@ export class AvisoService {
     return this.http.get<Aviso[]>(`${API_NEW_SINEF}/aviso`);
   }
 
+  private getAvisosOrderByData(): Observable<Aviso[]>{
+    return this.http.get<Aviso[]>(`${API_NEW_SINEF}/aviso?_sort=materia&_order=asc`);
+  }
+
   getAllAvisos(){
     this.getAvisos().subscribe(
+      data=>{
+        if(data){
+          this.listAvisos = data;
+        }
+      }
+
+    )
+  }
+  getAllAvisosOrderByData(){
+    this.getAvisosOrderByData().subscribe(
       data=>{
         if(data){
           this.listAvisos = data;

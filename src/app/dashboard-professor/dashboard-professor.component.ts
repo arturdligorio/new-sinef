@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MateriaService } from '../service/materia.service';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-dashboard-professor',
@@ -10,10 +11,10 @@ export class DashboardProfessorComponent implements OnInit {
 
   headElementsMateria: any = ['Sigla', 'Matéria', 'Sala'];
 
-  constructor(public mateiraService: MateriaService) { }
+  constructor(public materiaService: MateriaService, public loginService: LoginService) { }
 
   ngOnInit() {
-    this.mateiraService.getAllMaterias();
+    this.materiaService.getListMateriasByProfessor(this.loginService.getCurrentUser().login);
   }
 
 }
