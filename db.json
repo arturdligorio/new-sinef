@@ -59,7 +59,6 @@
         "name": "Calendário Acadêmico",
         "profile":"aluno"
       },
-      //-------------------------------
       {
         "path": "dashboard" ,
         "icon": "home",
@@ -84,5 +83,15 @@
         "name": "Notas e Faltas",
         "profile":"professor"
       }
-    ]  
-  }
+    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Joao Artur",
+      "login": "joao",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "profile": "admin"
+    }
+  ]
+  ],
+    }

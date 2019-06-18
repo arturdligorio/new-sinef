@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AppComponent } from '../app.component';
+import { LoginService } from 'src/app/service/login.service';
+import { Login } from 'src/app/model/login';
 
 @Component({
   selector: 'app-login',
@@ -14,39 +16,34 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
   submitted = false;
   loggin: boolean = false;
+  login: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    private router: Router,
+    public loginService: LoginService
+  ) {
 
-  ngOnInit() {
     this.loginForm = this.formBuilder.group({
       login: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
 
-    // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
   }
+
+  ngOnInit() { }
+
+
 
   get f() { return this.loginForm.controls; }
 
   onSubmit() {
-
-    this.submitted = true;
-
-    if (this.loginForm.invalid) {
-      return;
-    }
-
-    AppComponent
-
-    console.log(this.returnUrl);
-    this.loggin = true;
-    this.router.navigate(["main"]);
-
+    console.log(this.loginForm.controls.login.value);
+    console.log(this.loginForm.controls.password.value);
+    this.loginService.login(this.loginForm.controls.login.value, this.loginForm.controls.password.value);
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
-
 }
