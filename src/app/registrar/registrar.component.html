@@ -23,10 +23,13 @@
         <div *ngIf="registred && f.nome.errors" class="invalid-label">
           <div *ngIf="f.nome.errors.required">Nome obrigatório</div>
         </div>
-        <input type="text" id="profile" class="fadeIn third" formControlName="profile" placeholder="Profile"
-          [ngClass]="{ 'invalid-border': registred && f.profile.errors }" />
+        <select id="profile" class="form-control fadeIn third" formControlName="profile" placeholder="Profile"
+        [ngClass]="{ 'invalid-border': registred && f.profile.errors }">
+        <option value="" selected></option>  
+        <option *ngFor="let profile of listProfile" label="{{profile.label}}" value="{{profile.value}}"></option>
+        </select>
         <div *ngIf="registred && f.profile.errors" class="invalid-label">
-          <div *ngIf="f.profile.errors.required">Profile obrigatório: admin, aluno, professor</div>
+          <div *ngIf="f.profile.errors.required">Profile obrigatório.</div>
         </div>
         <input type="submit" class="fadeIn fourth" value="Registrar">
       </form>

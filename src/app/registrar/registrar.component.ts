@@ -15,6 +15,24 @@ export class RegistrarComponent implements OnInit {
   userRegistro: User;
   registred: boolean = false;
 
+  listProfile: any[] = [
+    {
+      "id": 1,
+      "value":"admin",
+      "label":"Admin"
+    },
+    {
+      "id": 2,
+      "value":"professor",
+      "label":"Professor"
+    },
+    {
+      "id": 3,
+      "value":"aluno",
+      "label":"Aluno"
+    }
+  ];
+
   constructor(private formBuilder: FormBuilder,
     private router: Router,
     public loginService: LoginService) { }

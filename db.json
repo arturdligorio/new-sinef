@@ -49,6 +49,23 @@
       "data": "21/04/2019"
     }
   ],
+  "profile": [
+    {
+      "id": 1,
+      "value": "admin",
+      "label": "Admin"
+    },
+    {
+      "id": 2,
+      "value": "professor",
+      "label": "Professor"
+    },
+    {
+      "id": 3,
+      "value": "aluno",
+      "label": "Aluno"
+    }
+  ],
   "courses": [],
   "sidebar": [
     {
@@ -161,6 +178,13 @@
       "name": "João Eloy",
       "profile": "aluno",
       "id": 7
+    },
+    {
+      "login": "teste3",
+      "password": "4badaee57fed5610012a296273158f5f",
+      "name": "efeafef",
+      "profile": "professor",
+      "id": 9
     }
   ],
   "materia": [
